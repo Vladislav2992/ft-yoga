@@ -1,0 +1,78 @@
+$gradient: linear-gradient(68deg, #FF62B7 14.39%, #9F53FF 79.59%);
+$gradient-hover: linear-gradient(90deg, #FF62B7 35%, #9F53FF 90%);
+$main-color: #2C0958;
+$p-color: #48365F;
+body {
+    background-color: #F8F0FD;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%; 
+    color: $main-color;
+}
+
+p {
+    color: $p-color;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.btn {
+    display: inline-flex;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    gap: 10px;  
+    align-items: center;
+    width: fit-content;
+    font-family: 'Poppins';
+    font-weight: 500;
+    background: linear-gradient(68deg, #FF62B7 14.39%, #9F53FF 79.59%);
+    transition: all .3s ease;
+
+    &:hover {
+        gap: 15px;        
+        box-shadow: 0 0 10px #7741b8;
+    }
+}
+
+section {
+    margin-bottom: 100px;
+    overflow-x: hidden;
+}
+
+.section__title {
+    font-family: 'Mollie glaston';
+    font-size: clamp(54px, 10vw, 80px);
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.gradient-text {
+    display: inline-block;
+    background: $gradient;
+    background-clip: text;
+    color: transparent;
+}

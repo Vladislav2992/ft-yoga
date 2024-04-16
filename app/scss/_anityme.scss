@@ -1,0 +1,163 @@
+.anytime {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.anityme__description {
+    transition: transform linear .6s;
+    transform: translateX(70%);
+    visibility: hidden;
+
+    &.animated {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.video__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(320px + 320 * (100vw / 1200));
+    transition: transform linear 1s;
+    transform: translateX(-70%);
+    visibility: hidden;
+
+    &.animated {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.video__img-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(2) {
+        align-self: flex-start;
+        position: relative;
+        z-index: 2;
+    }
+    
+    &:nth-child(3) {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.play-button {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover svg {
+        transform: scale(1.1);
+    }
+
+    span {
+        position: absolute;
+        display: inline-block;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+    
+        &:nth-child(1) {
+            animation: puls-circle-1 1.3s linear infinite alternate-reverse;
+        }
+        &:nth-child(2) {
+            animation: puls-circle-2 1.3s linear infinite alternate-reverse;
+        }
+        &:nth-child(3) {
+            animation: puls-circle-3 1.3s linear infinite alternate-reverse;
+        }
+    }
+    svg {
+        z-index: 3;
+        transition: .3s;
+    }
+}
+
+@keyframes puls-circle-1 {
+    0% {
+        width: 96px;
+        height: 96px;
+    }
+    100% {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@keyframes puls-circle-2 {
+    0% {
+        width: 80px;
+        height: 80px;
+    }
+    100% {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@keyframes puls-circle-3 {
+    0% {
+        width: 64px;
+        height: 64px;
+    }
+    100% {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.video__benefit-block {
+    width: fit-content;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    z-index: 3;
+    p {
+        margin: 0;
+    }
+
+    &._top {
+        right: 0;
+        top: 15%;
+    }
+    
+    &._bottom {
+        left: 0;
+        bottom: 15%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .anytime .container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .video__benefit-block._top {
+        top: 7%;
+    }
+}
+@media (max-width: 440px) {
+    .video__benefit-block._top {
+        top: 2%;
+    }
+}

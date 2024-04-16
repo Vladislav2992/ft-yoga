@@ -1,0 +1,127 @@
+.good-healthy {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.good-healthy__image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 573px;
+    transform: translateX(-120%);
+    visibility: hidden;
+    transition: transform linear .6s;
+
+    &.animated {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.heart-rate__wrapper {
+    display: flex;
+    width: 215px;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 20px;
+    gap: 10px;
+
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    span {
+        font-size: 24px;
+    }
+}
+
+.heart-rate {
+    font-family: 'Helvetica';
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.heart-svg__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 45, 39, 0.15);
+    width: 60px;
+    height: 60px;
+   
+
+    svg {
+        width: 30px;
+        height: 30px;
+        animation: heart-rating 1s linear infinite;
+    }
+}
+
+@keyframes heart-rating {
+    0% {
+        width: 30px;
+        height: 30px;   
+    }
+
+    100% {
+        width: 25px;
+        height: 25px;        
+    }
+}
+
+@keyframes bg-circle {
+    0% {
+        width: 60px;
+        height: 60px;
+        opacity: .5;
+    }
+
+    100% {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+}
+
+.courses__wrapper {
+    padding: 10px 24px;
+    background: #fff;
+    border-radius: 20px;
+    align-self: flex-end;
+    font-family: Helvetica;
+    font-size: 20px;
+
+    p {
+        margin: 0;        
+        color: $main-color;
+    }
+}
+
+.good-healthy__description {
+    transform: translateX(120%);
+    visibility: hidden;
+    transition: transform linear 1.5s;
+
+    &.animated {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+@media (max-width: 786px) {
+    .good-healthy .container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+    .good-healthy__image {
+        grid-row: 2/3;
+    }
+}
